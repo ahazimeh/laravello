@@ -7,9 +7,9 @@
         <link rel="stylesheet" href="{{ mix('css/app.css') }}">
         <script src="{{ mix('js/app.js') }}" defer></script>
     </head>
-    <body class="h-screen text-grey-800"style="background-color:#9076F6;">
-        <div id="app">
-            <Board></Board>
+    <body class="h-screen text-grey-800">
+        <div id="app" style="height: 100%;">
+            <router-view></router-view>
         </div>
     </body>
 </html>
