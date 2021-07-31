@@ -8,7 +8,7 @@
        <div class="h-full flex flex-1 flex-col items-stretch">
            <div class="mx-4 mb-2 text-white font-bold text-lg">
                <span v-if="$apollo.queries.board.loading">Loading...</span>
-               <span v-else>{{ board.title }}</span>
+               <!-- <span v-else>{{ board.title }}</span> -->
            </div>
            <div class="flex flex-1 items-start overflow-x-auto mx-2" v-if="board">
                <List :list="list" v-for="list in board.lists" :key="list.id"
@@ -52,7 +52,7 @@ export default {
                     listById().cards = listById().cards.filter( card => card.id !=event.data.id );
                     break;
                 case EVENT_CARD_UPDATED:
-                    // listById().cards.filter(card => card.id == event.data.id).title = event.data.title;
+                    listById().cards.filter(card => card.id == event.data.id).title = event.data.title;
                     break;
                     
             }
