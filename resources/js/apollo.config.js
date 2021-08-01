@@ -9,7 +9,8 @@ const apolloClient = new ApolloClient({
     headers:{
         'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').content
     },
-    credentials: 'include'//make apollo sends cookies with every request
+    credentials: 'include',//make apollo sends cookies with every request
+    onError: (err) => console.log('A global error handler!')
 });
 
 export default new VueApollo({
